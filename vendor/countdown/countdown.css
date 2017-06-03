@@ -64,26 +64,30 @@ a {
 	display: inline-block;
 	margin-top: 12px;
 }
+#countdown .dash:first-child{
+	padding-left: 0;
+	margin-left: 0;
+}
 .dash {
-	width: 127px;
-	height: 125px;
+	width: 0.8rem;
+	height: 1.2rem;
 	/*background: transparent url(img/t-box.jpg) 0 0 no-repeat;*/
 	float: left;
-	margin-left: 20px;
+	margin-left: 0.2rem;
 	position: relative;
 }
 
 .dash .digit {
-	font-size: 70px;
+	font-size: 0.7rem;
 	font-weight: bold;
 	float: left;
-	width: 45px;
+	width: 0.35rem;
 	text-align: center;
 	font-family: Arial;
 	color: #2f2e2e;
 	position: relative;
-	margin: 10px 0 0 13px;
-	padding-top:9px;
+	margin: 0.1rem 0 0 0.05rem;
+	padding-top:0px;
 }
 
 .dash_title {
@@ -92,13 +96,13 @@ a {
 	bottom: 0px;
 	text-align:center;
 	font-weight:bold;
-	width:127px;
-	font-size: 12px;
+	width:0.9rem;
+	font-size: 0.16rem;
 	color: #2f2e2e;
 	
 }
 .digit .bottom{
-	background: transparent url(img/t-box.jpg) 0 0 no-repeat;
+	/*background: transparent url(img/t-box.jpg) 0 0 no-repeat;*/
 }
 
 
