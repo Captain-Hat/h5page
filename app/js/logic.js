@@ -10,7 +10,7 @@ $(() => {
     $('#urlCode').attr('src', imgUrl + '?t=' + stamp)
     $('#countdown').countDown({
         targetDate: {
-            'day': 15,
+            'day': 16,
             'month': 6,
             'year': 2017,
             'hour': 0,
