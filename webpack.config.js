@@ -7,7 +7,7 @@ module.exports = {
     devtool: 'cheap-module-eval-source-map', //配置生成Source Maps，选择合适的选项 
     entry: { // pagesDir是前面准备好的入口文件集合目录的路径
         'js/entry': __dirname + "/app/main.js",
-        'js/vendor': ['jquery','./vendor/countdown/jquery.lwtCountdown-1.0.js']
+        'js/vendor': ['./vendor/countdown/jquery.lwtCountdown-1.0.js']
     },
     output: {
         path: __dirname + "/build", //打包后的文件存放的地方

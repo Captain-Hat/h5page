@@ -9,4 +9,4 @@ import '../vendor/countdown/countdown.css';//使用require导入css文件
 //不需要合并的文件搬运（需要在html引入）
 require('!!file-loader?name=static/css/[name].[ext]!../vendor/h5reset.css');
 require('!!file-loader?name=static/js/[name].[ext]!../vendor/rem.js');
-// require('!!file-loader?name=static/css/[name].[ext]!../vendor/countdown/countdown.css');
+require('!!file-loader?name=static/js/[name].[ext]!jquery/dist/jquery.min.js'); 
