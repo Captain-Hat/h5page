@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack",
-    "dev": "webpack-dev-server --hot",
+    "dev": "webpack-dev-server --hot --host 10.0.0.9",
     "build": "webpack --progress --colors --bail --config ./webpack.pro.config.js"
   },
   "author": "",

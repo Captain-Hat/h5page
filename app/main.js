@@ -11,4 +11,3 @@ import '../vendor/countdown/countdown.css';//使用require导入css文件
 require('!!file-loader?name=static/css/[name].[ext]!../vendor/h5reset.css');
 require('!!file-loader?name=static/js/[name].[ext]!../vendor/rem.js');
 require('!!file-loader?name=static/js/[name].[ext]!jquery/dist/jquery.min.js');  
-require('!!file-loader?name=static/[name].[ext]!./flowers.mp4');  

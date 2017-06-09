@@ -1,16 +1,15 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin'); 
 
 module.exports = {
     devtool: 'cheap-module-source-map', //配置生成Source Maps，选择合适的选项 
     entry: { // pagesDir是前面准备好的入口文件集合目录的路径
         'js/entry': __dirname + "/app/main.js",
-        'js/vendor': ['jquery','./vendor/countdown/jquery.lwtCountdown-1.0.js']
+        'js/vendor': ['./vendor/countdown/jquery.lwtCountdown-1.0.js']
     },
     output: {
-        path: __dirname + "/build", //打包后的文件存放的地方
+        path: __dirname + "/build-pro", //打包后的文件存放的地方
         // publicPath: "/asset",
         filename: "[name]-[hash].js", //打包后输出文件的文件名
         chunkFilename: '[id].bundle.js',
@@ -35,9 +34,10 @@ module.exports = {
                 }) //添加对样式表的处理
             },
             {
-                test: /\.(png|jpg)$/,
+                test: /\.(png|jpg|gif)$/,
                 loader: 'url-loader?limit=100&name=images/[name]-[hash:8].[ext]'
             },
+
             {　　　　　　
                 test: /\.html$/,
                 loader: 'html-withimg-loader'　　　　
@@ -55,15 +55,15 @@ module.exports = {
             filename: 'index.html', //http访问路径
             template: __dirname + "/app/index.tmpl.html", //实际文件路径
             inject: true,
-            chunks: ['js/entry', 'js/vendor', 'js/commons'] //new 一个这个插件的实例，并传入相关的参数
+            chunks: ['js/entry', 'js/vendor'] //new 一个这个插件的实例，并传入相关的参数
         }),
-        new webpack.optimize.UglifyJsPlugin(), 
+        new webpack.optimize.UglifyJsPlugin(),
         /* 抽取出所有通用的部分 */
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'js/commons', // 需要注意的是，chunk的name不能相同！！！
-            filename: '[name].js',
-            minChunks: 2,
-        }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: 'js/commons', // 需要注意的是，chunk的name不能相同！！！
+        //     filename: '[name].js',
+        //     minChunks: 3,
+        // }),
 
         /* 抽取出chunk的css */
         new ExtractTextPlugin('css/styles.css'),

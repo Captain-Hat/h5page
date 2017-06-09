@@ -1,5 +1,6 @@
  import imgUrl from '../images/code.jpg';
  import 'fullpage.js/dist/jquery.fullpage.min.js'
+ import '../../vendor/countdown/jquery.lwtCountdown-1.0.js'
  import 'fullpage.js/dist/jquery.fullpage.min.css'
  $(() => {
      //计算二维码大小和位置。已知数据：code 209*209   左上角坐标155,164   大图：750*683
