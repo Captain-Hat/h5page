@@ -5,8 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     devtool: 'cheap-module-source-map', //配置生成Source Maps，选择合适的选项 
     entry: { // pagesDir是前面准备好的入口文件集合目录的路径
-        'js/entry': __dirname + "/app/main.js",
-        'js/vendor': ['./vendor/countdown/jquery.lwtCountdown-1.0.js']
+        'js/entry': __dirname + "/app/main.js"
     },
     output: {
         path: __dirname + "/build-pro", //打包后的文件存放的地方
@@ -14,7 +13,7 @@ module.exports = {
         filename: "[name]-[hash].js", //打包后输出文件的文件名
         chunkFilename: '[id].bundle.js',
     },
-    module: { //在配置文件里添加JSON loader
+    module: { //在配置文件里添加JSON loader 
         loaders: [{
                 test: /\.json$/,
                 loader: "json-loader"
@@ -55,7 +54,7 @@ module.exports = {
             filename: 'index.html', //http访问路径
             template: __dirname + "/app/index.tmpl.html", //实际文件路径
             inject: true,
-            chunks: ['js/entry', 'js/vendor'] //new 一个这个插件的实例，并传入相关的参数
+            chunks: ['js/entry'] //new 一个这个插件的实例，并传入相关的参数
         }),
         new webpack.optimize.UglifyJsPlugin(),
         /* 抽取出所有通用的部分 */

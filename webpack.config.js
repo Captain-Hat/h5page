@@ -32,7 +32,7 @@ module.exports = {
                     fallback: "style-loader",
                     use: "css-loader!less-loader?modules",
                     publicPath: '../'
-                }) //添加对样式表的处理
+                }) //添加对样式表的处理 
             },
             {
                 test: /\.(png|jpg|gif)$/,
