@@ -27,6 +27,7 @@
          verticalCentered: true
      });
      $.fn.fullpage.setAllowScrolling(true);
+     
      // 动态计算code-box高度
      var totalH = $('#fullpage').height();
      var top = $('#section0 .header').height();

@@ -35,7 +35,7 @@ module.exports = {
                 }) //添加对样式表的处理
             },
             {
-                test: /\.(png|jpg)$/,
+                test: /\.(png|jpg|gif)$/,
                 loader: 'url-loader?limit=100&name=images/[name]-[hash:8].[ext]'
             },
             {　　　　　　
