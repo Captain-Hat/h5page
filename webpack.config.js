@@ -29,10 +29,10 @@ module.exports = {
             {
                 test: /\.(css|less)$/,
                 loader: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: "css-loader!less-loader?modules",
-                    publicPath: '../'
-                }) //添加对样式表的处理 
+                        fallback: "style-loader",
+                        use: "css-loader!less-loader?modules!postcss-loader",
+                        publicPath: '../'
+                    }) //添加对样式表的处理
             },
             {
                 test: /\.(png|jpg|gif)$/,
@@ -40,7 +40,7 @@ module.exports = {
             },
             {　　　　　　
                 test: /\.html$/,
-                loader: 'html-withimg-loader'　　　　
+                loader: 'html-withimg-loader'　　　
             },
 
             {
@@ -53,9 +53,6 @@ module.exports = {
         new webpack.BannerPlugin("Copyright Flying Unicorns inc."), //在这个数组中new一个就可以了
         new webpack.LoaderOptionsPlugin({
             options: {
-                postcss: function () {
-                    return [precss, autoprefixer];
-                },
                 devServer: {
                     contentBase: "./build", //本地服务器所加载的页面所在的目录
                     colors: true, //终端中输出结果为彩色

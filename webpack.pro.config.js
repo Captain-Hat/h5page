@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin'); 
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     devtool: 'cheap-module-source-map', //配置生成Source Maps，选择合适的选项 
@@ -27,10 +27,10 @@ module.exports = {
             {
                 test: /\.(css|less)$/,
                 loader: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: "css-loader!less-loader?modules",
-                    publicPath: '../'
-                }) //添加对样式表的处理
+                        fallback: "style-loader",
+                        use: "css-loader!less-loader?modules!postcss-loader",
+                        publicPath: '../'
+                    }) //添加对样式表的处理
             },
             {
                 test: /\.(png|jpg|gif)$/,
@@ -49,6 +49,7 @@ module.exports = {
         ]
     },
     plugins: [
+     
         new webpack.BannerPlugin("Copyright Flying Unicorns inc."), //在这个数组中new一个就可以了
         new HtmlWebpackPlugin({
             filename: 'index.html', //http访问路径
