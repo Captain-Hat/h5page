@@ -22,8 +22,13 @@ $(() => {
     $('#section0 .code-box').height(totalH - top - mid)
         //友盟统计
     $('.urlCode').click(function() {
-        _czc.push(['_trackEvent', '二维码图片', '点击或扫描', '', '0', 'urlCode']);
-    })
+            _czc.push(['_trackEvent', '二维码图片', '点击或扫描', '', '0', 'urlCode']);
+        })
+        // 分享
+    var imgUrl = "http://image.apin.com/shareImg.png";
+    var desc = "这是一个分享 描述";
+    var title = "测试分享";
+    var link = "h5.apin.com";
 
     function share(data) {
         wx.config({
@@ -75,13 +80,12 @@ $(() => {
             // 则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，
             // 则可以直接调用，不需要放在ready函数中。
             alert('准备好了');
-
             //分享给朋友
             wx.onMenuShareAppMessage({
-                title: '测试分享', // 分享标题
-                desc: '测试分享', // 分享描述
-                link: 'http://myetc.iask.in/test', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                imgUrl: 'http://myetc.iask.in/images/apinlogo30.png', // 分享图标
+                title: title, // 分享标题
+                link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                desc: desc, // 分享描述
+                imgUrl: imgUrl, // 分享图标
                 type: 'link', // 分享类型,music、video或link，不填默认为link
                 dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
                 success: function() {
@@ -95,9 +99,10 @@ $(() => {
             });
             //分享到朋友圈
             wx.onMenuShareTimeline({
-                title: '测试分享', // 分享标题
-                link: 'http://myetc.iask.in/test', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                imgUrl: 'http://myetc.iask.in/images/apinlogo30.png', // 分享图标
+                title: title, // 分享标题
+                link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                desc: desc, // 分享描述
+                imgUrl: imgUrl, // 分享图标
                 success: function() {
                     // 用户确认分享后执行的回调函数
                     alert('分享成功了');
