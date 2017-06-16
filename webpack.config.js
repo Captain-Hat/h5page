@@ -62,7 +62,7 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin({
-            filename: 'index.html', //http访问路径
+            filename: 'app.html', //http访问路径
             template: __dirname + "/app/index.tmpl.html", //实际文件路径
             inject: true,
             chunks: ['js/entry'] //new 一个这个插件的实例，并传入相关的参数
