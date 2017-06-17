@@ -10,4 +10,7 @@ import './less/base.less';//使用require导入css文件
 require('!!file-loader?name=static/css/[name].[ext]!../vendor/h5reset.css');
 require('!!file-loader?name=static/js/[name].[ext]!../vendor/rem.js');
 require('!!file-loader?name=static/js/[name].[ext]!jquery/dist/jquery.min.js');  
+// fullpage
+require('!!file-loader?name=static/js/[name].[ext]!fullpage.js/dist/jquery.fullpage.min.js');  
+require('!!file-loader?name=static/css/[name].[ext]!fullpage.js/dist/jquery.fullpage.min.css');
 require('!!file-loader?name=/[name].[ext]!../favicon.ico');  

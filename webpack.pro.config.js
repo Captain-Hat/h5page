@@ -13,6 +13,10 @@ module.exports = {
         filename: "[name]-[hash].js", //打包后输出文件的文件名
         chunkFilename: '[id].bundle.js',
     },
+    externals: {
+      jquery: "jQuery",
+      'fullpage.js/dist/jquery.fullpage.min.js':"fullpage"
+    },
     module: { //在配置文件里添加JSON loader 
         loaders: [{
                 test: /\.json$/,
